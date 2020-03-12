@@ -3,4 +3,9 @@
     <color name="colorPrimary">#6a1b9a</color>
     <color name="colorPrimaryDark">#4a148c</color>
     <color name="colorAccent">#7b1fa2</color>
+    
+    <color name="EczaneHeader">#F8A854</color>
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="tableBackground">#bbdefb</color>
 </resources>
