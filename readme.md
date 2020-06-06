@@ -5,5 +5,5 @@ The aim for the project is to show list of Night-Pharmcy of the day dynmically.
 Java - Android
 
 # ScreenShots
-![SS1](SS1.jpg)
-![SS2](SS2.jpg)
+![SS1](SS1.jpg=414x736)
+![SS2](SS2.jpg=414x736)
