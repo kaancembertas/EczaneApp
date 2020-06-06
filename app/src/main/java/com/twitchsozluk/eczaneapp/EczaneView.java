@@ -1,15 +1,13 @@
-package com.example.eczaneapp;
+package com.twitchsozluk.eczaneapp;
 import android.content.Context;
 import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
-
 import androidx.core.content.ContextCompat;
 
 
@@ -40,7 +38,7 @@ public class EczaneView extends LinearLayout {
         );
         l.setLayoutParams(params);
         l.setPadding(0,5,10,5);
-        l.setBackgroundColor(ContextCompat.getColor(context,R.color.EczaneHeader));
+        l.setBackgroundColor(ContextCompat.getColor(context, R.color.EczaneHeader));
 
         //Header Text
         TextView txt = new TextView(context);
