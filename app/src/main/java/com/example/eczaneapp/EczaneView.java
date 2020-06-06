@@ -1,8 +1,10 @@
 package com.example.eczaneapp;
 import android.content.Context;
+import android.content.Intent;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -12,7 +14,9 @@ import androidx.core.content.ContextCompat;
 
 
 public class EczaneView extends LinearLayout {
-    public EczaneView(Context context,String eczane,String telefon,String fax,String sgk,String adres,String tarif) {
+    public EczaneView(
+            Context context,String eczane,String telefon,String fax,String sgk,String adres,String tarif,double coord1,double coord2)
+    {
         super(context);
         LayoutParams params = new LayoutParams(
                 LayoutParams.MATCH_PARENT,
@@ -25,6 +29,7 @@ public class EczaneView extends LinearLayout {
 
         this.addView(header(context,eczane));
         this.addView(table(context,telefon,fax,sgk,adres,tarif));
+        this.addView(mapButton(context,eczane,coord1,coord2));
     }
 
     private LinearLayout header(Context context,String eczane){
@@ -66,6 +71,24 @@ public class EczaneView extends LinearLayout {
         t.addView(row(context,"Adres: ",adres));
         t.addView(row(context,"Adres Tarifi: ",tarif));
         return t;
+    }
+
+    private Button mapButton(final Context context, final String eczane, final double coord1, final double coord2){
+        Button btn = new Button(context);
+        btn.setText("Haritada Göster");
+        btn.setBackgroundColor(ContextCompat.getColor(context,R.color.showMapBackground));
+        btn.setTextColor(ContextCompat.getColor(context,R.color.white));
+        btn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context,MapsActivity.class);
+                i.putExtra("eczane",eczane);
+                i.putExtra("coord1",coord1);
+                i.putExtra("coord2",coord2);
+                context.startActivity(i);
+            }
+        });
+        return btn;
     }
 
     private TableRow row(Context context,String first,String second){

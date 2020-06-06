@@ -63,9 +63,13 @@ public class EczaneBilgi extends AppCompatActivity {
                         adres =adresQuery.get(7).text();
                         tarif =adresQuery.get(9).text();
                         /* ------------------------------------------*/
+                        Elements coordinateQuery = doc.select("a[class=btn btn-primary btn-block]");
+                        String coordLink = coordinateQuery.get(0).attr("href");
+                        double coord1 =Double.parseDouble(coordLink.split("\\?")[1].split("&")[0].split("=")[1]);
+                        double coord2 =Double.parseDouble(coordLink.split("\\?")[1].split("&")[1].split("=")[1]);
 
                         container.addView(new EczaneView(EczaneBilgi.this,
-                                eczane,telefon,fax,sgk,adres,tarif));
+                                eczane,telefon,fax,sgk,adres,tarif,coord1,coord2));
                     }
                     subHeader.setText(headText);
 
