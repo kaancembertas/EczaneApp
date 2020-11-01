@@ -1,6 +1,9 @@
 #  Night-Pharmacy
 The aim for the project is to show list of Night-Pharmcy of the day dynmically.
 
+# Google Play
+https://play.google.com/store/apps/details?id=com.twitchsozluk.eczaneapp
+
 # Used Technologies
 Java - Android
 
